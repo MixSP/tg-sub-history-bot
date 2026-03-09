@@ -67,4 +67,6 @@ Table `events`; full schema is in `schema.py`. Columns:
 
 Add the bot as an **administrator** to the desired Telegram channel or group (with permission to receive `chat_member` updates). It will log join/leave events to the database; no extra commands are required.
 
+**Auto-restart on crash:** use [systemd](https://www.freedesktop.org/software/systemd/man/systemd.service.html) (Linux), [Supervisor](http://supervisord.org/), or [PM2](https://pm2.keymetrics.io/) to run the bot as a service and restart it when it stops.
+
 **Security:** Do not commit a real `BOT_TOKEN`. Keep it in `config.py` only on the server, or use `.env` and load it in code (if so, consider adding `config.py` to `.gitignore` when it holds secrets).
