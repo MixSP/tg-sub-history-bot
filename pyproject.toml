@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "tg-sub-history-bot"
+version = "0.1.0"
+description = "Telegram bot for tracking channel/chat subscriber join/leave events"
+readme = "README.md"
+authors = ["MixSP"]
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.11"
+aiogram = "^3.22"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
