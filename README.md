@@ -68,4 +68,6 @@ Add the bot as an **administrator** to the desired Telegram channel or group (wi
 
 **Auto-restart on crash:** use [systemd](https://www.freedesktop.org/software/systemd/man/systemd.service.html) (Linux), [Supervisor](http://supervisord.org/), or [PM2](https://pm2.keymetrics.io/) to run the bot as a service and restart it when it stops.
 
+**Backups and monitoring:** back up the database file (see `DB_PATH` in `config.py`) regularly. Watch `LOG_FILE` for errors and recorded events.
+
 **Security:** Do not commit a real `BOT_TOKEN`. Keep it in `config.py` only on the server, or use `.env` and load it in code (if so, consider adding `config.py` to `.gitignore` when it holds secrets).
