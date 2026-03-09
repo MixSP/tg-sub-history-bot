@@ -27,7 +27,6 @@ channel growth and churn over time.
 - **config.py** — `BOT_TOKEN`, `DB_PATH`, `LOG_FILE` (set token before run)
 - **schema.py** — `events` table definition
 - **pyproject.toml** — Poetry deps (Python 3.11+, aiogram)
-- **.gitignore** — venv, `.env`, logs, `*.db`
 
 Secrets can live in `.env` and be loaded in code; the bot does not read `.env` by default.
 
