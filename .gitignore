@@ -1,5 +1,12 @@
 __pycache__
+*.pyc
+*.pyo
 logs
 .vscode
+.venv
+venv
+.env
 *.log
 *.db
+dist
+*.egg-info
