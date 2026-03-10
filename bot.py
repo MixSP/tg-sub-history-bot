@@ -9,7 +9,7 @@ from aiogram.enums import ChatMemberStatus
 from aiogram.filters import CommandStart
 from aiogram.types import ChatMemberUpdated, Message
 
-from config import BOT_TOKEN, LOG_FILE
+from config import BOT_TOKEN, LOG_FILE, POLLING_TIMEOUT
 import db
 
 Path(LOG_FILE).parent.mkdir(parents=True, exist_ok=True)
@@ -84,7 +84,11 @@ async def main():
     db.init_db()
 
     try:
-        await dp.start_polling(bot, allowed_updates=dp.resolve_used_update_types())
+        await dp.start_polling(
+            bot,
+            polling_timeout=POLLING_TIMEOUT,
+            allowed_updates=dp.resolve_used_update_types(),
+        )
     finally:
         await bot.session.close()
 

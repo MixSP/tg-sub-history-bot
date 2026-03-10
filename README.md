@@ -24,7 +24,7 @@ channel growth and churn over time.
 
 - **bot.py** — entry point, `/start` and `chat_member` handlers, logging, polling
 - **db.py** — SQLite connection, init, event insert/deduplication
-- **config.py** — `BOT_TOKEN`, `DB_PATH`, `LOG_FILE` (set token before run)
+- **config.py** — `BOT_TOKEN`, `DB_PATH`, `LOG_FILE`, `POLLING_TIMEOUT` (set token before run)
 - **schema.py** — `events` table definition
 - **pyproject.toml** — Poetry deps (Python 3.11+, aiogram)
 
@@ -71,3 +71,5 @@ Add the bot as an **administrator** to the desired Telegram channel or group (wi
 **Backups and monitoring:** back up the database file (see `DB_PATH` in `config.py`) regularly. Watch `LOG_FILE` for errors and recorded events.
 
 **Security:** Do not commit a real `BOT_TOKEN`. Keep it in `config.py` only on the server, or use `.env` and load it in code (if so, consider adding `config.py` to `.gitignore` when it holds secrets).
+
+**Idle CPU:** If the bot uses noticeable CPU in idle, increase `POLLING_TIMEOUT` in `config.py` (default 30; try 50–60). Higher value = fewer getUpdates cycles and less CPU, at the cost of slightly slower reaction to shutdown.
